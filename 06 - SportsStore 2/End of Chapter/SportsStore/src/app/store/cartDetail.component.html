@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="bg-dark text-white p-2">
+            <span class="navbar-brand ml-2">SPORTS STORE</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mt-2">
+            <h2 class="text-center">Your Cart</h2>
+            <table class="table table-bordered table-striped p-2">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Product</th>
+                        <th class="text-end">Price</th>
+                        <th class="text-end">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="cart.lines.length == 0">
+                        <td colspan="4" class="text-center">
+                            Your cart is empty
+                        </td>
+                    </tr>
+                    <tr *ngFor="let line of cart.lines">
+                        <td>
+                            <input type="number" class="form-control-sm" style="width:5em" [value]="line.quantity"
+                                (change)="cart.updateQuantity(line.product,
+                                  $any($event).target.value)" />
+                        </td>
+                        <td>{{line.product.name}}</td>
+                        <td class="text-end">
+                            {{line.product.price | currency:"USD":"symbol":"2.2-2"}}
+                        </td>
+                        <td class="text-end">
+                            {{(line.lineTotal) | currency:"USD":"symbol":"2.2-2" }}
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-sm btn-danger" (click)="cart.removeLine(line.product.id ?? 0)">
+                                Remove
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-end">Total:</td>
+                        <td class="text-end">
+                            {{cart.cartPrice | currency:"USD":"symbol":"2.2-2"}}
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="text-center">
+                <button class="btn btn-primary m-1" routerLink="/store">
+                    Continue Shopping
+                </button>
+                <button class="btn btn-secondary m-1" routerLink="/checkout" [disabled]="cart.lines.length == 0">
+                    Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-toolbar span { flex: 1 1 auto; }
+
+.menu-button { width: 100%; font-size: 1rem; }
+.menu-button .mat-icon {  margin-right: 10px; }
+.menu-button span {  flex: 1 1 auto; }
+
+mat-sidenav { margin: 16px; width: 175px; border-right: none;
+    border-radius: 4px; padding: 4px;
+}
+mat-sidenav .mat-divider { margin-top: 20px; margin-bottom: 5px; }
+mat-sidenav-container { height: calc(100vh - 60px); }
+mat-sidenav .mat-button-wrapper {
+    display: flex; width: 100%; justify-content: baseline; align-content: center;
+}
+mat-sidenav .mat-button-wrapper  mat-icon { margin-top: 5px; }
+mat-sidenav .mat-button-wrapper span { text-align: start; }
+
+table[mat-table] { width: 100%; table-layout: auto; }
+table[mat-table] button { margin-left: 5px;}
+table[mat-table] th.mat-header-cell { font-size: large; font-weight: bold;}
+table[mat-table] .mat-column-name { width: 25%; } 
+table[mat-table] .mat-column-buttons { width: 30%; } 
+/* table[mat-table] +  button[mat-flat-button] { margin-top: 10px;} */
+
+.bottom-box { background-color: white; padding-bottom: 20px;}
+.bottom-box  >  button[mat-flat-button] { margin-top: 10px;}
+.bottom-box mat-paginator { float: right; font-size: 14px; }
+
+mat-form-field { width: 100%;}
+mat-form-field:first-child { margin-top: 20px;}
+form button[mat-flat-button] { margin-top: 10px; margin-right: 10px;}
+h3.heading {  margin-top: 20px; }
+
+mat-checkbox { margin: 10px; font-size: large;}
+td.no-data { font-size: large;}
+table.orders tbody, table.orders thead { vertical-align: top }
+table.orders td { padding-top: 10px;}
+table.orders table th:first-of-type, table.orders table td:first-of-type { 
+    margin: 0; padding: 0;
+}

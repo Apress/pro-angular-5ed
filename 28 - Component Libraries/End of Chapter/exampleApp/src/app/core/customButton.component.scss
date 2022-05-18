@@ -1,0 +1,42 @@
+@use "@angular/material" as material;
+
+$primary: material.define-palette(material.$indigo-palette);
+$accent: material.define-palette(material.$pink-palette, A200, A100, A400);
+$warn: material.define-palette(material.$red-palette);
+
+$typography: material.define-typography-config();
+
+button[class*="custom-button-"] {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 2px;
+}
+
+button.custom-button {
+    @each $name, $palette in (primary: $primary, accent: $accent, warn: $warn) {
+        &-#{$name} {
+            background-color: material.get-color-from-palette($palette, default);
+            color: material.get-color-from-palette($palette, default-contrast);
+            font: {
+                family: material.font-family($typography, button);
+                size: material.font-size($typography, button);
+                weight: material.font-weight($typography, button);
+            } 
+        }
+
+        &-#{$name} ::ng-deep .mat-ripple-element {
+            background-color: material.get-color-from-palette($palette, 
+                default-contrast, 0.1);            
+        }
+    }    
+}
+
+$bg: material.$light-theme-background-palette;
+$fg: material.$light-theme-foreground-palette;
+
+:host[disabled] button[class*="custom-button-"], 
+        button[class*="custom-button-"]:disabled  {
+    background-color: material.get-color-from-palette($bg, disabled-button);
+    color: material.get-color-from-palette($fg, disabled-button);
+}

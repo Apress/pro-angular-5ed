@@ -1,0 +1,35 @@
+<table mat-table [dataSource]="dataSource">
+
+    <mat-text-column name="id"></mat-text-column>
+    <mat-text-column name="name"></mat-text-column>
+    <mat-text-column name="category"></mat-text-column>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let item"> {{item.price | currency:"USD"}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="buttons">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let p">            
+          <button mat-flat-button color="accent"
+                (click)="deleteProduct(p.id)">
+              Delete
+          </button>
+          <button mat-flat-button color="warn" 
+                [routerLink]="['/admin/main/products/edit', p.id]">
+              Edit
+          </button>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colsAndRows"></tr>
+    <tr mat-row *matRowDef="let row; columns: colsAndRows"></tr>
+</table>
+
+<div class="bottom-box">
+    <button mat-flat-button color="primary" routerLink="/admin/main/products/create">
+        Create New Product
+    </button>
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[3, 5, 10]">
+    </mat-paginator>
+</div>

@@ -1,0 +1,36 @@
+<h3 class="heading">{{editing  ? "Edit" : "Create"}} Product</h3>
+
+<form (ngSubmit)="save()">
+
+    <mat-form-field *ngIf="editing">
+        <mat-label>ID</mat-label>
+        <input matInput name="id" [(ngModel)]="product.id" disabled />
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput name="name" [(ngModel)]="product.name" />
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Category</mat-label>
+        <input matInput name="category" [(ngModel)]="product.category" />
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input name="description"  matInput [(ngModel)]="product.description"/>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Price</mat-label>
+        <input matInput name="price" [(ngModel)]="product.price" />
+    </mat-form-field> 
+
+    <button type="submit" mat-flat-button color="primary">
+        {{editing ? "Save" : "Create"}}
+    </button>
+    <button type="reset" mat-stroked-button  routerLink="/admin/main/products">
+        Cancel
+    </button>
+</form>

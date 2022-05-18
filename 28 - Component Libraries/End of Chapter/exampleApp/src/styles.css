@@ -1,0 +1,8 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+button.mat-flat-button { margin: 2px; }
+
+table.mat-table {  width: 100%; }
+th.mat-header-cell { font-size: large; font-weight: bold;}
+td.mat-column-price { font-style: italic;}

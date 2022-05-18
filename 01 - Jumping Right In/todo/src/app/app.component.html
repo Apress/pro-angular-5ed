@@ -1,0 +1,53 @@
+<mat-toolbar color="primary" class="mat-elevation-z3">
+    <span class="spacer"></span>
+    <span>{{ username }}'s To Do List</span>
+    <span class="spacer"></span>
+    <mat-icon matBadge="{{ itemCount }}" matBadgeColor="accent">checklist</mat-icon>
+</mat-toolbar>
+
+<div class="inputContainer">
+    <mat-form-field class="fullWidth">
+        <mat-label style="padding-left: 5px;">New To Do</mat-label>
+        <input matInput placeholder="Enter to-do description" #todoText>
+        <button matSuffix mat-raised-button color="accent" class="addButton"
+            (click)="addItem(todoText.value); todoText.value = ''">
+            Add
+        </button>
+    </mat-form-field>
+</div>
+
+<div class="tableContainer">
+    <table mat-table [dataSource]="items" class="mat-elevation-z3 fullWidth">
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>#</th>
+            <td mat-cell *matCellDef="let i = index"> {{ i + 1 }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="task">
+            <th mat-header-cell *matHeaderCellDef>Task</th>
+            <td mat-cell *matCellDef="let item"> {{ item.task }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="done">
+            <th mat-header-cell *matHeaderCellDef>Done</th>
+            <td mat-cell *matCellDef="let item">
+                <mat-checkbox [(ngModel)]="item.complete" color="primary">
+                    <!-- {{ item.complete }} -->
+                </mat-checkbox>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="['id', 'task', 'done']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['id', 'task', 'done'];"></tr>
+    </table>
+</div>
+
+<div class="toggleContainer">
+    <span class="spacer"></span>
+    <mat-slide-toggle [(ngModel)]="showComplete">
+        Show Completed Items
+    </mat-slide-toggle>
+    <span class="spacer"></span>
+</div>
+

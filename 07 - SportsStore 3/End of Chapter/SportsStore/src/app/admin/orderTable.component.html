@@ -1,0 +1,53 @@
+<mat-checkbox [(ngModel)]="includeShipped">Display Shipped Orders</mat-checkbox>
+
+<table class="orders" mat-table [dataSource]="dataSource">
+
+    <mat-text-column name="name"></mat-text-column>
+    <mat-text-column name="zip"></mat-text-column>
+
+    <ng-container matColumnDef="cart_p">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let order"> 
+            <table mat-table [dataSource]="order.cart.lines">
+                <ng-container matColumnDef="p">
+                    <th mat-header-cell *matHeaderCellDef>Product</th>
+                    <td mat-cell *matCellDef="let line">{{ line.product.name }}</td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="['p']"></tr>
+                <tr mat-row *matRowDef="let row; columns: ['p']"></tr>            
+            </table>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cart_q">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let order"> 
+            <table mat-table [dataSource]="order.cart.lines">
+                <ng-container matColumnDef="q">
+                    <th mat-header-cell *matHeaderCellDef>Quantity</th>
+                    <td mat-cell *matCellDef="let line">{{ line.quantity }}</td>
+                </ng-container>            
+                <tr mat-header-row *matHeaderRowDef="['q']"></tr>
+                <tr mat-row *matRowDef="let row; columns: ['q']"></tr>            
+            </table>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="buttons">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let o">            
+          <button mat-flat-button color="primary" (click)="toggleShipped(o)">
+              {{ o.shipped ? "Unship" : "Ship" }}
+          </button>
+          <button mat-flat-button color="warn" (click)="delete(o.id)">
+              Delete
+          </button>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colsAndRows"></tr>
+    <tr mat-row *matRowDef="let row; columns: colsAndRows"></tr>
+    
+    <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell no-data" colspan="4">No orders to display</td>
+    </tr>
+</table>

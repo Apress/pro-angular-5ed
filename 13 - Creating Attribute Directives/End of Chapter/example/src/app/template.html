@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-5">
+            <form class="p-2" (ngSubmit)="submitForm()">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input class="form-control" name="name" [(ngModel)]="newProduct.name" />
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <input class="form-control" name="category" [(ngModel)]="newProduct.category" />
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input class="form-control" name="price" [(ngModel)]="newProduct.price" />
+                </div>
+                <button class="btn btn-primary mt-2" type="submit">Create</button>
+            </form>
+        </div>
+
+        <div class="col">
+
+            <div class="form-group bg-info text-white p-2">
+                <label>Name:</label>
+                <input class="bg-primary text-white form-control" 
+                    [(paModel)]="newProduct.name" #paModel="paModel" />
+                <div class="bg-info text-white p-1">Direction: {{paModel.direction}}</div>            
+            </div>
+                        
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr><th></th><th>Name</th><th>Category</th><th>Price</th></tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of getProducts(); let i = index"
+                            [pa-attr]="getProducts().length < 6 
+                                ? 'table-success' : 'table-warning'"
+                            [pa-product]="item" (pa-category)="newProduct.category = $event">
+                        <td>{{i + 1}}</td>
+                        <td>{{item.name}}</td>
+                        <td [pa-attr]="item.category == 'Soccer' ? 'table-info' : null">
+                            {{item.category}}
+                        </td>
+                        <td [pa-attr]="'table-info'">{{item.price}}</td>
+                    </tr>
+                </tbody>    
+            </table>
+        </div>
+        
+        
+        
+    </div>
+</div>

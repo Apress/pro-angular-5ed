@@ -1,0 +1,5 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+form.ng-submitted input.ng-invalid { border: 2px solid #ff0000 }
+form.ng-submitted input.ng-valid { border: 2px solid #6bc502 }

@@ -1,0 +1,87 @@
+<form [formGroup]="productForm" #form="ngForm" 
+        (ngSubmit)="submitForm()" (reset)="resetForm()">
+
+    <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" formControlName="name" />
+        <ul class="text-danger list-unstyled mt-1">
+            <li *validationErrors="productForm; control:'name'; let err">
+                {{ err }}
+            </li>
+        </ul>
+    </div>
+
+    <div class="form-group">
+        <label>Category</label>
+        <input class="form-control" formControlName="category"  />
+        <ul class="text-danger list-unstyled mt-1">
+            <li *validationErrors="productForm; control:'category'; let err">
+                {{ err }}
+            </li>
+        </ul>        
+    </div>
+
+    <div class="form-group">
+        <label>Price</label>
+        <input class="form-control" formControlName="price" [high]=300 [low]=10 />
+        <ul class="text-danger list-unstyled mt-1">
+            <li *validationErrors="productForm; control:'price'; let err">
+                {{ err }}
+            </li>
+        </ul> 
+    </div>
+    
+    <ng-container formGroupName="details">
+        <div class="form-group">
+            <label>Supplier</label>
+            <input class="form-control" formControlName="supplier" />
+            <ul class="text-danger list-unstyled mt-1">
+                <li *validationErrors="productForm; control:'details.supplier'; 
+                    label: 'supplier'; let err">
+                        {{ err }}
+                </li>
+            </ul>     
+        </div>
+
+        <ng-container formGroupName="keywords">
+            <button class="btn btn-sm btn-primary my-2" (click)="addKeywordControl()" 
+                  type="button">
+                Add Keyword
+            </button>            
+            <ul class="text-danger list-unstyled mt-1">
+                <li *validationErrors="productForm; control:'details.keywords'; 
+                        label: 'keywords' let err">
+                    {{ err }}
+                </li>
+            </ul>             
+            <div class="form-group" *ngFor="let c of keywordGroup.controls; 
+                    let i = index; let count = count">
+                <label>Keyword {{ i + 1 }}</label>
+                <div class="input-group">
+                    <input class="form-control" [formControlName]="i" [value]="c.value" />                     
+                    <button class="btn btn-danger" type="button" *ngIf="count > 1" 
+                            (click)="removeKeywordControl(i)">
+                        Delete
+                    </button>
+                </div>
+                <ul class="text-danger list-unstyled mt-1">
+                    <li *validationErrors="productForm; control:'details.keywords.' + i; 
+                        label: 'keyword'; let err">
+                            {{ err }}
+                    </li>
+                </ul>                    
+            </div>
+        </ng-container>
+        
+            
+    </ng-container>
+
+    <div class="mt-2">
+        <button type="submit" class="btn btn-primary"
+                [class.btn-warning]="editing" 
+                [disabled]="form.invalid">
+            {{editing ? "Save" : "Create"}}
+        </button>
+        <button type="reset" class="btn btn-secondary m-1">Cancel</button>
+      </div>
+</form>
