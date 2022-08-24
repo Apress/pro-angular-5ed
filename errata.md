@@ -10,5 +10,6 @@ On Page 44, the command shown in `Listing 3-3` is incorrect. It should be:
 
 >ng config projects.Primer.architect.build.options.styles '[""src/styles.css"", ""node_modules/bootstrap/dist/css/bootstrap.min.css""]'
 
+(Thanks to Chris Kiihne for reporting this problem)
 
 ---
