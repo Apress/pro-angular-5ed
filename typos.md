@@ -34,6 +34,33 @@ should be:
 
 ---
 
+**Chapter 7**
+
+On page 166, Listing 7-13 contians duplicate routes for `main`. Use this code instead:
+
+    import { NgModule } from "@angular/core";
+    import { CommonModule } from "@angular/common";
+    import { FormsModule } from "@angular/forms";
+    import { RouterModule } from "@angular/router";
+    import { AuthComponent } from "./auth.component";
+    import { AdminComponent } from "./admin.component";
+    import { AuthGuard } from "./auth.guard";
+    let routing = RouterModule.forChild([
+        { path: "auth", component: AuthComponent },
+        { path: "main", component: AdminComponent, canActivate: [AuthGuard] },
+        { path: "**", redirectTo: "auth" }
+    ]);
+    @NgModule({
+        imports: [CommonModule, FormsModule, routing],
+        declarations: [AuthComponent, AdminComponent],
+        providers: [AuthGuard]
+    })
+    export class AdminModule { }
+
+(Thanks to Bill Longabaugh for reporting this problem)
+
+---
+
 **Chapter 9**
 
 On page 227, this sentence:
@@ -63,3 +90,32 @@ should be:
 > This is done using the **Document** Object Model (DOM) API provided by the browser for JavaScript applications, and the changes can be seen only by right-clicking in the browser window and selecting Inspect from the pop-up menu, producing the following result:
 
 (Thanks to Piyapan Weesapen for reporting this problem)
+
+---
+
+**Chapter 13**
+
+On page 354, this sentence:
+
+>   The ElementRef class defines a single property, nativeElement, which returns the object used by the browser to represent the element in the Domain Object Model.
+
+should be:
+
+> The ElementRef class defines a single property, nativeElement, which returns the object used by the browser to represent the element in the **Document** Object Model.
+
+(Thanks to Piyapan Weesapen for reporting this problem)
+
+---
+
+**Chapter 15**
+
+On page 429, this sentence:
+
+>   This is known as the component’s view encapsulation behavior, and what Angular is doing is emulating a feature known as the shadow DOM, which allows sections of the Domain Object Model to be isolated so they have their own scope, meaning that JavaScript, styles, and templates can be applied to part of the HTML document.
+
+should be:
+
+>   This is known as the component’s view encapsulation behavior, and what Angular is doing is emulating a feature known as the shadow DOM, which allows sections of the **Document** Object Model to be isolated so they have their own scope, meaning that JavaScript, styles, and templates can be applied to part of the HTML document.
+
+(Thanks to Piyapan Weesapen for reporting this problem)
+
