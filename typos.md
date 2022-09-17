@@ -34,6 +34,34 @@ should be:
 
 ---
 
+On page 71, this sentence:
+
+>   As explainer earlier, TypeScript won’t let null or undefined to be assigned to variables unless they have been 
+defined with a suitable type union.
+
+should be:
+
+> As **explained** earlier, TypeScript won’t let null or undefined to be assigned to variables unless they have been 
+defined with a suitable type union.
+
+(Thanks to Piyapan Weesapen for reporting this problem)
+
+---
+
+**Chapter 4**
+
+This sentence:
+
+> This chapter uses the Primer project created in Chapter 4
+
+should be:
+
+> This chapter uses the Primer project created in Chapter **3**.
+
+(Thanks to Piyapan Weesapen for reporting this problem)
+
+---
+
 **Chapter 7**
 
 On page 166, Listing 7-13 contians duplicate routes for `main`. Use this code instead:
