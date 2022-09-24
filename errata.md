@@ -13,3 +13,15 @@ On Page 44, the command shown in `Listing 3-3` is incorrect. It should be:
 (Thanks to Chris Kiihne for reporting this problem)
 
 ---
+
+**Chaper 8**
+
+On page 196, the command shown in Listing 8-1 produces the following error when installing the PWA package:
+
+    An unhandled exception occurred: Cannot find module '@schematics/angular/utility'
+
+To avoid this problem, use this command, which specifies a package version:
+
+    ng add @angular/pwa@13.0.3
+
+(Thanks to Bill Longabaugh for reporting this problem)

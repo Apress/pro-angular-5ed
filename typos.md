@@ -89,6 +89,14 @@ On page 166, Listing 7-13 contians duplicate routes for `main`. Use this code in
 
 ---
 
+**Chapter 8**
+
+On page 204, the command shown in Listing 8-12 requires `sudo` when using Linux/macOS.
+
+(Thanks to Bill Longabaugh for reporting this problem)
+
+---
+
 **Chapter 9**
 
 On page 227, this sentence:
@@ -116,6 +124,14 @@ On page 239, this sentence:
 should be:
 
 > This is done using the **Document** Object Model (DOM) API provided by the browser for JavaScript applications, and the changes can be seen only by right-clicking in the browser window and selecting Inspect from the pop-up menu, producing the following result:
+
+(Thanks to Piyapan Weesapen for reporting this problem)
+
+---
+
+On page 246, the caption for Listing 9-26 should be:
+
+>   Changing the Custom Element in the index.html File in the **src/app** Folder
 
 (Thanks to Piyapan Weesapen for reporting this problem)
 
