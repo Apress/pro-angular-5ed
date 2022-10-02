@@ -137,6 +137,23 @@ On page 246, the caption for Listing 9-26 should be:
 
 ---
 
+**Chapter 10**
+
+On page 254, the paragraph prior to Table 10-4 incorrectly states that there are five bindings, when there are only four.
+
+(Thanks to Piyapan Weesapen for reporting this problem)
+
+---
+
+On page 255, this sentence references the m-2 class, which is not applied by the example:
+
+>The effect is that the ngClass directive will add the host element to four classes: text-white, ***m-2***, and 
+p-2, which Bootstrap uses...
+
+(Thanks to Piyapan Weesapen for reporting this problem)
+
+---
+
 **Chapter 13**
 
 On page 354, this sentence:
