@@ -34,6 +34,18 @@ should be:
 
 ---
 
+On page 62, this sentence:
+
+> This may seem like a short list, but JavaScript manages to fit a lot of flexibility into these three types. 
+
+should be:
+
+> This may seem like a short list, but JavaScript manages to fit a lot of flexibility into these **five** types. 
+
+(Thanks to Dragoș Grigore for reporting this problem)
+
+---
+
 On page 71, this sentence:
 
 >   As explainer earlier, TypeScript won’t let null or undefined to be assigned to variables unless they have been 
@@ -62,6 +74,20 @@ should be:
 
 ---
 
+**Chapter 6**
+
+On page 149, this sentence:
+
+> Angular adds elements to the ng-dirty, ng-valid, and ng-valid classes to indicate their validation status.
+
+should be:
+
+> Angular adds elements to the ng-dirty, ng-valid, and ***ng-invalid*** classes to indicate their validation status.
+
+(Thanks to Dragoș Grigore for reporting this problem)
+
+---
+
 **Chapter 7**
 
 On page 166, Listing 7-13 contians duplicate routes for `main`. Use this code instead:
@@ -86,6 +112,12 @@ On page 166, Listing 7-13 contians duplicate routes for `main`. Use this code in
     export class AdminModule { }
 
 (Thanks to Bill Longabaugh for reporting this problem)
+
+---
+
+On page 178, Listing 7-29 omits a `td` end tag.
+
+(Thanks to Piyapan Weesapen for reporting this problem)
 
 ---
 
