@@ -4,6 +4,17 @@ This file contains errors that are likely to prevent the code examples from work
 
 ---
 
+**Chapter 1**
+
+On page 22, the type package installed by Listing 1-31 should specify a version, like this:
+
+    npm install --save-dev @types/inquirer@7.3.3
+
+(Thanks to J Fern for reporting this problem)
+
+---
+
+
 **Chapter 3**
 
 On Page 44, the command shown in `Listing 3-3` is incorrect. It should be:

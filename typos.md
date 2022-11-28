@@ -24,6 +24,20 @@ itemCount properties and insert them into the content of the h3 and **h6** eleme
 
 On page 53, this sentence:
 
+> This listing defines a JavaScript function, which receives a value as a parameter, uses
+operator to add 10 to the value, and then writes out the result to the JavaScript console.
+
+should be:
+
+> This listing defines a JavaScript function, which receives a value as a parameter, uses
+operator to add ***100*** to the value, and then writes out the result to the JavaScript console.
+
+(Thanks to Nick Pavlou for reporting this problem)
+
+---
+
+On page 53, this sentence:
+
 >   The first new statement invokes myFunction with a number, 10.
 
 should be:
@@ -62,7 +76,7 @@ defined with a suitable type union.
 
 **Chapter 4**
 
-This sentence:
+On page 73, this sentence:
 
 > This chapter uses the Primer project created in Chapter 4
 
@@ -71,6 +85,14 @@ should be:
 > This chapter uses the Primer project created in Chapter **3**.
 
 (Thanks to Piyapan Weesapen for reporting this problem)
+
+---
+
+On page 80, the caption for Listing 4-10 should be:
+
+> Creating ***and*** Populating an Array in the main.ts File in the src Folder
+
+(Thanks to Nick Pavlou for reporting this problem)
 
 ---
 
@@ -89,6 +111,22 @@ should be:
 ---
 
 **Chapter 7**
+
+On page 163, this sentence:
+
+>The pipe method and map function are provided by the RxJS package, and they allow the response event 
+from the server, which is presented through an Observable<any> to be transformed into an event in the 
+Observable<bool> that is the result of the authenticate method.
+
+should be:
+
+>The pipe method and map function are provided by the RxJS package, and they allow the response event 
+from the server, which is presented through an Observable<any> to be transformed into an event in the 
+Observable<***boolean***> that is the result of the authenticate method.
+
+(Thanks to Dragoș Grigore for reporting this problem)
+
+---
 
 On page 166, Listing 7-13 contians duplicate routes for `main`. Use this code instead:
 
@@ -183,6 +221,17 @@ On page 255, this sentence references the m-2 class, which is not applied by the
 p-2, which Bootstrap uses...
 
 (Thanks to Piyapan Weesapen for reporting this problem)
+
+
+---
+
+On page 266, this sentence:
+
+> For this element, membership of the bg-info and bg-warning classes is tied to the value of the price property of a Product object, as shown in Figure 10-9. 
+
+should be:
+
+> For this element, membership of the bg-info and ***bg-success*** classes is tied to the value of the price property of a Product object, as shown in Figure 10-9. 
 
 ---
 
