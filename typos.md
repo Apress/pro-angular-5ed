@@ -261,3 +261,29 @@ should be:
 
 (Thanks to Piyapan Weesapen for reporting this problem)
 
+---
+
+**Chapter 27**
+
+On page 817, this sentence:
+
+> In the next chapter, I describe the features that Angular provides to support unit testing.
+
+does not correctly describe the next chapter, which covers component libraries.
+
+(Thanks to Frank Ibem for reporting this problem)
+
+---
+
+On page 837, this sentence:
+
+> The mast-paginator component displays pagination controls for the table data.
+
+should be:
+
+> The **mat-paginator** component displays pagination controls for the table data.
+
+(Thanks to Frank Ibem for reporting this problem)
+
+
+
