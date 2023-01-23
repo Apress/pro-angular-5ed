@@ -237,6 +237,12 @@ should be:
 
 **Chapter 13**
 
+On page 349, the color of the `Name` column in the table displayed by Figure 13-3 doesn't match the output from the application. 
+
+(Thanks to Nick Mulder for reporting this problem)
+
+---
+
 On page 354, this sentence:
 
 >   The ElementRef class defines a single property, nativeElement, which returns the object used by the browser to represent the element in the Domain Object Model.
