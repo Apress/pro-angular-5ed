@@ -20,6 +20,18 @@ itemCount properties and insert them into the content of the h3 and **h6** eleme
 
 ---
 
+On page 25, the caption for Listing 2-13 is:
+
+> Applying Components in the app.components.html File in the src/app Folder
+
+but should be:
+
+> Applying Components in the ***app.component.html*** File in the src/app Folder
+
+(Thanks to George McBath for reporting this problem)
+
+---
+
 **Chapter 3**
 
 On page 53, this sentence:
