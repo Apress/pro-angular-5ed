@@ -219,6 +219,13 @@ On page 246, the caption for Listing 9-26 should be:
 
 ---
 
+On page 246, the text that follows Listing 9.23 should be:
+
+>The @Component decorator configures the component. The selector property specifies the HTML element that the directive will be applied to, which is app. The templateUrl property in the @Component **decorator** specifies the content that will be used as the contents of the app element, and, for this example, this property specifies the template.html file.
+
+(Thanks to Piyapan Weesapen for reporting this problem)
+
+
 **Chapter 10**
 
 On page 254, the paragraph prior to Table 10-4 incorrectly states that there are five bindings, when there are only four.
@@ -282,6 +289,17 @@ should be:
 ---
 
 **Chapter 27**
+
+On page 795, the description in Table 27-4 should be:
+
+>   This **arrow** specifies a two-way transition between two states, 
+such as when the element moves from the selected state to 
+the notselected state and from the notselected state to the 
+selected state.
+
+(Thanks to Piyapan Weesapen for reporting this problem)
+
+---
 
 On page 817, this sentence:
 
