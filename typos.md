@@ -288,6 +288,20 @@ should be:
 
 ---
 
+**Chapter 18**
+
+On page 514, this sentence:
+
+>   As with the other chapters in this part of the book, I am going to continue working with the project created Chapter 11 and most recently modified in Chapter 19. 
+
+should be: 
+
+>   As with the other chapters in this part of the book, I am going to continue working with the project created Chapter 11 and most recently modified in Chapter **17**. 
+
+(Thanks to Piyapan Weesapen for reporting this problem)
+
+---
+
 **Chapter 27**
 
 On page 795, the description in Table 27-4 should be:
